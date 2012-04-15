@@ -27,4 +27,7 @@
 		</plugins>
 	</build>
 
+	<scm>
+		<url>git@github.com:just-cloud/osgi-model.git</url>
+	</scm>
 </project>
