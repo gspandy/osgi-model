@@ -8,6 +8,7 @@
 	</parent>
 	<artifactId>test-daos</artifactId>
 	<name>test-daos</name>
+	<packaging>bundle</packaging>
 
 	<dependencies>
 		<dependency>

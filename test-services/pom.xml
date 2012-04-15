@@ -8,6 +8,7 @@
 	</parent>
 	<artifactId>test-services</artifactId>
 	<name>test-services</name>
+	<packaging>bundle</packaging>
 
 	<dependencies>
 		<dependency>

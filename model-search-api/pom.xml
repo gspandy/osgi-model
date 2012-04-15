@@ -8,6 +8,7 @@
 	</parent>
 	<artifactId>model-search-api</artifactId>
 	<name>model-search-api</name>
+	<packaging>bundle</packaging>
 
 	<dependencies>
 		<dependency>

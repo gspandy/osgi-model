@@ -8,6 +8,7 @@
 	</parent>
 	<artifactId>test-config</artifactId>
 	<name>test-config</name>
+	<packaging>bundle</packaging>
 
 	<build>
 		<plugins>
