@@ -34,6 +34,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
+						<Import-Service>javax.sql.DataSource;osgi.jndi.service.name="jdbc/testperson"</Import-Service>
 						<Import-Package>com.justcloud.model.dao,com.justcloud.model.domain,org.apache.derby.jdbc,org.hibernate.proxy,javassist.util.proxy,*</Import-Package>
 						<Export-Package>!com.justcloud.model.test.*</Export-Package>
 						<Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
