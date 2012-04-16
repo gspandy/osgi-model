@@ -6,23 +6,16 @@
 		<groupId>com.justcloud.model</groupId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>test-daos</artifactId>
-	<name>test-daos</name>
+	<artifactId>test-bridge</artifactId>
+	<name>test-bridge</name>
 	<packaging>bundle</packaging>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.justcloud.model</groupId>
-			<artifactId>test-api</artifactId>
+			<artifactId>test-daos</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
-		<dependency>
-			<groupId>com.justcloud.model</groupId>
-			<artifactId>model-hibernate-jpa-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -34,10 +27,8 @@
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-						<Import-Service>javax.sql.DataSource;osgi.jndi.service.name="jdbc/testperson"</Import-Service>
-						<Import-Package>com.justcloud.model.dao,com.justcloud.model.domain,org.apache.derby.jdbc,org.hibernate.proxy,javassist.util.proxy,*</Import-Package>
-						<Export-Package>com.justcloud.model.test.domain.jpa</Export-Package>
-						<Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
+						<Fragment-Host>com.justcloud.org.hibernate.core</Fragment-Host>
+                        <Import-Package>com.justcloud.model.test.domain.jpa</Import-Package>
 					</instructions>
 				</configuration>
 			</plugin>

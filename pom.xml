@@ -13,9 +13,18 @@
 		<module>model-jpa-hibernate-api</module>
 		<module>test-api</module>
 		<module>test-config</module>
+		<module>test-bridge</module>
 		<module>test-daos</module>
 		<module>test-services</module>
 	</modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.4</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -30,5 +39,5 @@
 		</plugins>
 	</build>
 
-	
+
 </project>

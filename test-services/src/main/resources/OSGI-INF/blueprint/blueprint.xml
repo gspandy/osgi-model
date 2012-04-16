@@ -1,11 +1,10 @@
-<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
-    xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.1.0">
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
 
-	<bean id="testService" class="com.justcloud.test.service.TestService">
-		<tx:transaction method="*" value="Required" />
-		<property name="testPersonDao" ref="testPersonDao" />
+	<bean id="testService" class="com.justcloud.test.service.TestService"
+		init-method="setup" destroy-method="teardown">
+		<property name="testPersonDao">
+			<reference interface="com.justcloud.model.test.dao.TestPersonDao" />
+		</property>
 	</bean>
-
-	<reference id="testPersonDao" interface="com.justcloud.model.test.dao.TestPersonDao" />
 
 </blueprint>

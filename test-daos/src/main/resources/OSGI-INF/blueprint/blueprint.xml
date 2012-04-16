@@ -1,5 +1,6 @@
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
-	xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.1.0">
+	xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.1.0"
+	xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.1.0">
 
 	<bean id="testPersonDao" class="com.justcloud.model.test.dao.jpa.TestPersonDaoJpa">
 		<jpa:context property="entityManager" unitname="testperson" />
