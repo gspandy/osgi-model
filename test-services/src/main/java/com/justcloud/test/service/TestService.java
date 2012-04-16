@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.justcloud.model.test.dao.TestPersonDao;
+import com.justcloud.model.test.domain.jpa.TestPersonJpa;
 
 public class TestService {
 
@@ -21,6 +22,13 @@ public class TestService {
 		logger.info("This is ready " + testPersonDao.getAll().size());
 	}
 
+	public void insert() {
+		TestPersonJpa person = new TestPersonJpa();
+		person.setEmail("email@email.com");
+		person.setName("Eduardo Diaz");
+		testPersonDao.save(person);
+	}
+	
 	public void setTestPersonDao(TestPersonDao testPersonDao) {
 		this.testPersonDao = testPersonDao;
 	}
@@ -30,6 +38,7 @@ public class TestService {
 		executor.scheduleAtFixedRate(new Runnable() {
 
 			public void run() {
+				insert();
 				test();
 			}
 		}, 10, 10, TimeUnit.SECONDS);
