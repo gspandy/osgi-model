@@ -11,6 +11,7 @@
 		<module>model-api</module>
 		<module>model-search-api</module>
 		<module>model-jpa-hibernate-api</module>
+		<module>model-jpa-hibernate-search-api</module>
 		<module>test-api</module>
 		<module>test-config</module>
 		<module>test-bridge</module>
@@ -38,6 +39,42 @@
 			</plugin>
 		</plugins>
 	</build>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.1.2</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <distributionManagement>
+        <repository>
+            <id>release.repo</id>
+            <name>Iamedu Release Internal Repository</name>
+            <url>file:///home/iamedu/Repos/maven/justcloud/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshot.repo</id>
+            <name>Iamedu Snapshot Internal Repository</name>
+            <url>file:///home/iamedu/Repos/maven/justcloud/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 
 </project>
