@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>model-parent</artifactId>
 		<groupId>com.justcloud.model</groupId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
 	<artifactId>model-api</artifactId>
 	<name>model-api</name>

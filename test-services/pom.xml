@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>model-parent</artifactId>
 		<groupId>com.justcloud.model</groupId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
 	<artifactId>test-services</artifactId>
 	<name>test-services</name>
@@ -14,12 +14,12 @@
 		<dependency>
 			<groupId>com.justcloud.model</groupId>
 			<artifactId>test-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.justcloud.model</groupId>
 			<artifactId>test-daos</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.1</version>
 		</dependency>
 	</dependencies>
 

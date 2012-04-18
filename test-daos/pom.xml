@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>model-parent</artifactId>
 		<groupId>com.justcloud.model</groupId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
 	<artifactId>test-daos</artifactId>
 	<name>test-daos</name>
@@ -14,15 +14,21 @@
 		<dependency>
 			<groupId>com.justcloud.model</groupId>
 			<artifactId>test-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.1</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.justcloud.model</groupId>
 			<artifactId>model-hibernate-jpa-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.1</version>
 		</dependency>
 
+		<!-- Hibernate search -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-search</artifactId>
+			<version>4.1.0.Final</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -35,7 +41,16 @@
 				<configuration>
 					<instructions>
 						<Import-Service>javax.sql.DataSource;osgi.jndi.service.name="jdbc/testperson"</Import-Service>
-						<Import-Package>com.justcloud.model.dao,com.justcloud.model.domain,org.apache.derby.jdbc,org.hibernate.proxy,javassist.util.proxy,*</Import-Package>
+						<Import-Package>
+                            com.justcloud.model.dao,
+                            com.justcloud.model.domain,
+                            org.apache.derby.jdbc,
+                            org.hibernate.proxy,
+                            javassist.util.proxy,
+                            org.apache.solr.analysis;version="[3.5.0,4.0.0)",
+                            org.hibernate.search.annotations;version="[4.1.0,5.0.0)",
+                            *
+                        </Import-Package>
 						<Export-Package>com.justcloud.model.test.domain.jpa</Export-Package>
 						<Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
 					</instructions>

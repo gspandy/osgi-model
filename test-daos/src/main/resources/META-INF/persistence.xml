@@ -17,6 +17,23 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 			<property name="hibernate.jdbc.batch_size" value="30" />
 			
 			<property name="hibernate.transaction.jta.platform" value="com.justcloud.aries.transaction.AriesPlatform" />
+
+            <property name="hibernate.cache.use_query_cache" value="true" />
+            <property name="hibernate.cache.use_second_level_cache"
+                                value="true" />
+            <property name="hibernate.cache.region.factory_class"
+                                value="org.hibernate.cache.ehcache.EhCacheRegionFactory" />
+
+            <property name="hibernate.search.default.directory_provider"
+                                value="filesystem" />
+            <property name="hibernate.search.default.indexBase" value="/tmp/lucene/indexes" />
+            <property name="hibernate.search.default.batch.merge_factor"
+                                value="10" />
+            <property name="hibernate.search.default.batch.max_buffered_docs"
+                                value="10" />
+            <property name="hibernate.search.worker.batch_size" value="1" />
+
+            <property name="javax.persistence.validation.mode" value="callback, ddl" />
 			
 		</properties>
 	</persistence-unit>
